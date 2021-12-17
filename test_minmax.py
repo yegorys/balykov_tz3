@@ -4,7 +4,7 @@ from main import mins, maxs, sums, mul
 import unittest
 
 class SolutionTestCase(unittest.TestCase):
-    def test_max():  #тест на максимум
+    def test_max(n):  #тест на максимум
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
