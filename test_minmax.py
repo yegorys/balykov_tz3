@@ -1,6 +1,7 @@
 import time
 from functools import reduce
 from main import mins, maxs, sums, mul
+import unittest
 
 
 def test_max():  #тест на максимум
