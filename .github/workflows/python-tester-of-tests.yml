@@ -5,12 +5,15 @@ on: [push]
 jobs:
   build-linux:
     runs-on: ubuntu-latest
+    strategy:
+        matrix:
+            python-version: [3.6, 3.7, 3.8]
 
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python all python versions
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: ${{ matrix.python-version }}
     - name: Testing 
       run: python -m unittest
