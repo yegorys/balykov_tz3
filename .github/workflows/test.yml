@@ -1,0 +1,11 @@
+name: GitHub Actions Tester
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run Test
+        working-directory: ./
+        run: python -m unittest
