@@ -1,4 +1,4 @@
-[![Python Package](https://github.com/yegorys/balykov_tz3/actions/workflows/python-package-conda.yml/badge.svg)](https://github.com/yegorys/balykov_tz3/actions/workflows/python-package-conda.yml)
+[![Python Package](https://github.com/yegorys/balykov_tz3/actions/workflows/python-tester-of-tests.yml/badge.svg)](https://github.com/yegorys/balykov_tz3/actions/workflows/python-tester-of-tests.yml)
 # balykov_tz3
 репозиторий GitHub с готовым ТЗ3 Балыкова Егора 2003 
 # описание
