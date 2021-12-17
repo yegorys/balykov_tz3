@@ -2,10 +2,7 @@ import time
 from functools import reduce
 from main import mins, maxs, sums, mul
 import unittest
-
-
-proz = 0
-
+import math
 
 class SolutionTestCase(unittest.TestCase):
     def test_max(n):  #тест на максимум
@@ -29,19 +26,11 @@ class SolutionTestCase(unittest.TestCase):
         assert sums(data) == sum(data)
 
 
-    def proz(numbers):
-        try:
-            proizden = reduce(lambda x,y: x*y,numbers)
-        except OverflowError:
-            proizden = "error"
-        return proizden
-
-
     def test_proiz(n):  #тест на произведение
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
-        assert mul(data) == proz(data)
+        assert mul(data) == math.prod(data)
 
 
     def test_proiz_bolse_sum(n):  #любой другой тест
