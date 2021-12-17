@@ -11,14 +11,14 @@ class SolutionTestCase(unittest.TestCase):
         assert maxs(data) == max(data)
 
 
-    def test_min():  #тест на минимум
+    def test_min(n):  #тест на минимум
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
         assert mins(data) == min(data)
 
 
-    def test_sum():  #тест на сумму
+    def test_sum(n):  #тест на сумму
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
@@ -33,21 +33,21 @@ class SolutionTestCase(unittest.TestCase):
         return proizden
 
 
-    def test_proiz():  #тест на произведение
+    def test_proiz(n):  #тест на произведение
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
         assert mul(data) == proz(data)
 
 
-    def test_proiz_bolse_sum():  #любой другой тест
+    def test_proiz_bolse_sum(n):  #любой другой тест
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
         assert mul(data) > sums(data)
 
 
-    def test_time():  #тест на время
+    def test_time(n):  #тест на время
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
