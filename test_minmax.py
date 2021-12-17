@@ -3,6 +3,10 @@ from functools import reduce
 from main import mins, maxs, sums, mul
 import unittest
 
+
+proz = 0
+
+
 class SolutionTestCase(unittest.TestCase):
     def test_max(n):  #тест на максимум
         data = []
