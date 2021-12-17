@@ -1,11 +1,16 @@
-name: GitHub Actions Tester
+name: Continuous Integration
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-      - name: Run Test
-        working-directory: ./
-        run: python -m unittest
+  build:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: python set up
+            uses: actions/setup-python@v2
+            with:
+              python-version: ${{ matrix.python-version }}
+              architecture: x64
+          - name: Install dependencies
+            run: pip install -r requirements.txt
+          - name: Run Test
+            run: python -m unittest descover .
