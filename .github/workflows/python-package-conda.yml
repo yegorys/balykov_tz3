@@ -13,4 +13,4 @@ jobs:
       with:
         python-version: 3.8
     - name: Test with pytest
-      run: python -m unittest discover .
+      run: python -m unittest
