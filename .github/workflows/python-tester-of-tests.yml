@@ -15,10 +15,10 @@ jobs:
     - name: Testing 
       run: python -m unittest
       
-      if: ${{ always() 
+      if: ${{ always() }}
     - name: notification
       uses: haishanh/actions-telegram-notification@v1
       with:
         notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
-        job-status: ${{ job.status }} }}
+        job-status: ${{ job.status }} 
         
