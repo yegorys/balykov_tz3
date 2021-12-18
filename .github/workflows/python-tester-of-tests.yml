@@ -6,10 +6,11 @@ on: [push]
 jobs:
   build-linux:
     runs-on: ubuntu-latest
+    continue-on-error: ${{ teleg }}
   
     steps:
     - uses: actions/checkout@v2
-        if ${{jobs.build-linux.continue-on-error}}
+
     - name: Set up Python all python versions
       uses: actions/setup-python@v2
       with:
@@ -17,7 +18,7 @@ jobs:
     - name: Testing 
       run: python -m unittest
       
-    - name: send telegram message on push
+    - name: teleg
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
