@@ -7,6 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: notification
+      uses: haishanh/actions-telegram-notification@v1
+      with:
+        notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
+        job-status: ${{ job.status }}
+        
     - uses: actions/checkout@v2
     - name: Set up Python all python versions
       uses: actions/setup-python@v2
@@ -15,8 +21,4 @@ jobs:
     - name: Testing 
       run: python -m unittest
 
-    - name: notification
-      uses: haishanh/actions-telegram-notification@v1
-      with:
-        notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
-        job-status: ${{ job.status }}
+    
