@@ -27,5 +27,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-            Состояние: ${{ job.build-linux.status }}
+            Состояние: ${{ job.status.build-linux }}
         
