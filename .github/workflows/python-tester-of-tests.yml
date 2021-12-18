@@ -12,7 +12,6 @@ jobs:
         if ${{jobs.build-linux.continue-on-error}}
     - name: Set up Python all python versions
       uses: actions/setup-python@v2
-        ${{jobs.build-linux.continue-on-error}}
       with:
         python-version: 3.8
     - name: Testing 
