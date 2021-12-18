@@ -14,12 +14,9 @@ jobs:
         python-version: 3.8
     - name: Testing 
       run: python -m unittest
-  
-  build:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: haishanh/actions-telegram-notification@v1
+
+    - name: notification
+      uses: haishanh/actions-telegram-notification@v1
       with:
         notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
         job-status: ${{ job.status }}
