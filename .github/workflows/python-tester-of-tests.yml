@@ -4,7 +4,7 @@ on: [push]
 
 
 jobs:
-  build-linux:
+  job1:
     runs-on: ubuntu-latest
   
     steps:
@@ -25,7 +25,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-            Состояние: ${{ jobs.build-linux.output }}
+            Состояние: ${{ jobs.job1.outputs }}
             
     - name: bad_teleg
       if: ${{ job.status == 'success' }}
