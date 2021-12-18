@@ -12,4 +12,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Commit message: ${{ github.action[0].message }}
+            Commit message: ${{ github.action.message }}
