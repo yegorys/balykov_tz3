@@ -16,13 +16,16 @@ jobs:
     - name: Testing 
       run: python -m unittest
       
-      if: ${{jobs.build-linux.steps.continue-on-error}}
-      
+    
+
+  notification:
+    runs-on: ununtu-latest
+    steps:
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-            Состояние: ${{ job.status }}
+            Состояние: ${{ job.build-linux.status }}
         
