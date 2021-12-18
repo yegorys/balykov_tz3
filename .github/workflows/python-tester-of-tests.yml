@@ -6,7 +6,6 @@ on: [push]
 jobs:
   build-linux:
     runs-on: ubuntu-latest
-    continue-on-error: ${{ teleg }}
   
     steps:
     - uses: actions/checkout@v2
@@ -19,6 +18,7 @@ jobs:
       run: python -m unittest
       
     - name: teleg
+      if: ${{ always() }}
       uses: appleboy/telegram-action@master
       with:
         to: ${{ secrets.TELEGRAM_TO }}
