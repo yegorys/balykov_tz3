@@ -16,7 +16,8 @@ jobs:
         python-version: 3.8
     - name: Testing 
       run: python -m unittest
-      
+
+      if: ${{ job.status == 'failure' }}
     - name: teleg
       if: ${{ always() }}
       uses: appleboy/telegram-action@master
@@ -25,6 +26,7 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
             Состояние: ${{ job.status }}
+    
     - name: bad_teleg
       if: ${{ job.status == 'success' }}
       uses: appleboy/telegram-action@master
