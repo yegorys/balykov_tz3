@@ -2,13 +2,13 @@ import time
 from main import mins, maxs, sums, mul
 import unittest
 import math
-        
-    def proz(numbers):
-        try:
-            proizden = math.prod(numbers)
-        except OverflowError:
-            proizden = "error"
-        return proizden
+     
+def proz(numbers):
+    try:
+        proizden = math.prod(numbers)
+    except OverflowError:
+        proizden = "error"
+    return proizden
     
 class SolutionTestCase(unittest.TestCase):
     def test_max(n):  #тест на максимум
