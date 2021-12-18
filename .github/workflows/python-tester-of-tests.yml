@@ -6,7 +6,6 @@ jobs:
   build-linux:
     runs-on: ubuntu-latest
 
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python all python versions
@@ -15,7 +14,11 @@ jobs:
         python-version: 3.8
     - name: Testing 
       run: python -m unittest
-      
+  
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
     - uses: haishanh/actions-telegram-notification@v1
       with:
         notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
