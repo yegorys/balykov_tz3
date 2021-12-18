@@ -17,19 +17,27 @@ class SolutionTestCase(unittest.TestCase):
             data = list(map(int, file_obj.read().split()))
         assert mins(data) == min(data)
 
-
+    
     def test_sum(n):  #тест на сумму
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
         assert sums(data) == sum(data)
 
-
+        
+    def proz(numbers):
+        try:
+            proizden = math.prod(numbers)
+        except OverflowError:
+            proizden = "error"
+        return proizden
+    
+    
     def test_proiz(n):  #тест на произведение
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
-        assert mul(data) == math.prod(data)
+        assert mul(data) == proz(data)
 
 
     def test_proiz_bolse_sum(n):  #любой другой тест
