@@ -37,7 +37,7 @@ class SolutionTestCase(unittest.TestCase):
         data = []
         with open("data.txt", 'r') as file_obj:
             data = list(map(int, file_obj.read().split()))
-        assert mul(data) < sums(data)
+        assert mul(data) > sums(data)
 
 
     def test_time(n):  #тест на время
