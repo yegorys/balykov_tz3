@@ -12,4 +12,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            Commit message: ${{ github.event.workflow[0].message }}
+            Commit message: ${{ github.event.workflow }}
