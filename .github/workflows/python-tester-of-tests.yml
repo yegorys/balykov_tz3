@@ -34,6 +34,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-            Состояние: все ок
+            все ок
     
 
