@@ -1,5 +1,4 @@
 import time
-from functools import reduce
 from main import mins, maxs, sums, mul
 import unittest
 import math
