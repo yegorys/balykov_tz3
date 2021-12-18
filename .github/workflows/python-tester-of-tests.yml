@@ -2,7 +2,6 @@ name: python
 
 on: [push]
 
-jobs.build-linux.steps.continue-on-error
 
 jobs:
   build-linux:
@@ -16,6 +15,8 @@ jobs:
         python-version: 3.8
     - name: Testing 
       run: python -m unittest
+      
+      if: ${{jobs.build-linux.steps.continue-on-error}}
       
     - name: send telegram message on push
       uses: appleboy/telegram-action@master
