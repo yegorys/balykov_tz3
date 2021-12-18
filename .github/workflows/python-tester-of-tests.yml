@@ -25,4 +25,13 @@ jobs:
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
             Состояние: ${{ job.status }}
+    - name: bad_teleg
+      if: ${{ job.status == 'success' }}
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+            Состояние: все ок
+             
 
