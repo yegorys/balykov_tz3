@@ -17,8 +17,8 @@ jobs:
       run: python -m unittest
       
     - uses: haishanh/actions-telegram-notification@v1
-        with:
-    notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
-    job-status: ${{ job.status }}
+      with:
+        notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
+        job-status: ${{ job.status }}
 
  
