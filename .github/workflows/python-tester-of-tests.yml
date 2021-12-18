@@ -25,7 +25,7 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-            Состояние: ${{ job.status }}
+            Состояние: ${{ needs.build-linux.result }}
             
     - name: bad_teleg
       if: ${{ job.status == 'success' }}
