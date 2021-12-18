@@ -20,5 +20,3 @@ jobs:
       with:
         notification-token: ${{ secrets.NOTIFICATION_TOKEN }}
         job-status: ${{ job.status }}
-
- 
