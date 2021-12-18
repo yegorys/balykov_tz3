@@ -16,8 +16,4 @@ jobs:
     - name: Testing 
       run: python -m unittest
 
-  deployment:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: deploy
+ 
